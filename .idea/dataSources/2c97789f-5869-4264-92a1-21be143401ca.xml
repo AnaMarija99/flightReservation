@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="TRAVELAPP.db">
+  <database-model serializer="dbm" dbms="SQLITE" family-id="SQLITE" format-version="4.16">
+    <root id="1">
+      <ServerVersion>3.31.1</ServerVersion>
+    </root>
+    <schema id="2" parent="1" name="main">
+      <Current>1</Current>
+    </schema>
+    <collation id="3" parent="1" name="BINARY"/>
+    <collation id="4" parent="1" name="NOCASE"/>
+    <collation id="5" parent="1" name="RTRIM"/>
+    <table id="6" parent="2" name="ACCOUNT"/>
+    <table id="7" parent="2" name="AIRLINE"/>
+    <table id="8" parent="2" name="CLIENT"/>
+    <table id="9" parent="2" name="FLIGHT"/>
+    <table id="10" parent="2" name="FLIGHTCLASS"/>
+    <table id="11" parent="2" name="ITINERARY"/>
+    <table id="12" parent="2" name="SEAT"/>
+    <table id="13" parent="2" name="sqlite_master">
+      <System>1</System>
+    </table>
+    <table id="14" parent="2" name="sqlite_sequence">
+      <System>1</System>
+    </table>
+    <column id="15" parent="6" name="_id">
+      <Position>1</Position>
+      <DataType>INTEGER|0s</DataType>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="16" parent="6" name="EMAIL">
+      <Position>2</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <column id="17" parent="6" name="PASSWORD">
+      <Position>3</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <column id="18" parent="6" name="ACCOUNT_CLIENT">
+      <Position>4</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <key id="19" parent="6">
+      <ColNames>_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="20" parent="6">
+      <ColNames>ACCOUNT_CLIENT</ColNames>
+      <RefTableName>CLIENT</RefTableName>
+      <RefColNames>_id</RefColNames>
+    </foreign-key>
+    <column id="21" parent="7" name="_id">
+      <Position>1</Position>
+      <DataType>INTEGER|0s</DataType>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="22" parent="7" name="AIRLINENAME">
+      <Position>2</Position>
+      <DataType>TEXT|0s</DataType>
+      <Collation>NOCASE</Collation>
+    </column>
+    <key id="23" parent="7">
+      <ColNames>_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="24" parent="8" name="_id">
+      <Position>1</Position>
+      <DataType>INTEGER|0s</DataType>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="25" parent="8" name="FIRSTNAME">
+      <Position>2</Position>
+      <DataType>TEXT|0s</DataType>
+      <Collation>NOCASE</Collation>
+    </column>
+    <column id="26" parent="8" name="LASTNAME">
+      <Position>3</Position>
+      <DataType>TEXT|0s</DataType>
+      <Collation>NOCASE</Collation>
+    </column>
+    <column id="27" parent="8" name="PHONE">
+      <Position>4</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <column id="28" parent="8" name="CREDITCARD">
+      <Position>5</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <key id="29" parent="8">
+      <ColNames>_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="30" parent="9" name="_id">
+      <Position>1</Position>
+      <DataType>INTEGER|0s</DataType>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="31" parent="9" name="FLIGHTNUMBER">
+      <Position>2</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="32" parent="9" name="ORIGIN">
+      <Position>3</Position>
+      <DataType>TEXT|0s</DataType>
+      <Collation>NOCASE</Collation>
+    </column>
+    <column id="33" parent="9" name="DESTINATION">
+      <Position>4</Position>
+      <DataType>TEXT|0s</DataType>
+      <Collation>NOCASE</Collation>
+    </column>
+    <column id="34" parent="9" name="DEPARTUREDATE">
+      <Position>5</Position>
+      <DataType>DATE|0s</DataType>
+    </column>
+    <column id="35" parent="9" name="ARRIVALDATE">
+      <Position>6</Position>
+      <DataType>DATE|0s</DataType>
+    </column>
+    <column id="36" parent="9" name="DEPARTURETIME">
+      <Position>7</Position>
+      <DataType>TIME|0s</DataType>
+    </column>
+    <column id="37" parent="9" name="ARRIVALTIME">
+      <Position>8</Position>
+      <DataType>TIME|0s</DataType>
+    </column>
+    <column id="38" parent="9" name="FLIGHTDURATION">
+      <Position>9</Position>
+      <DataType>TIME|0s</DataType>
+    </column>
+    <column id="39" parent="9" name="FARE">
+      <Position>10</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="40" parent="9" name="FLIGHT_AIRLINE">
+      <Position>11</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <key id="41" parent="9">
+      <ColNames>_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="42" parent="9">
+      <ColNames>FLIGHT_AIRLINE</ColNames>
+      <RefTableName>AIRLINE</RefTableName>
+      <RefColNames>_id</RefColNames>
+    </foreign-key>
+    <column id="43" parent="10" name="_id">
+      <Position>1</Position>
+      <DataType>INTEGER|0s</DataType>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="44" parent="10" name="FLIGHTCLASSNAME">
+      <Position>2</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <key id="45" parent="10">
+      <ColNames>_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="46" parent="11" name="_id">
+      <Position>1</Position>
+      <DataType>INTEGER|0s</DataType>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="47" parent="11" name="TIMESTAMP">
+      <Position>2</Position>
+      <DataType>DATETIME|0s</DataType>
+      <DefaultExpression>STRFTIME(&apos;%Y-%m-%d  %H:%M&apos;, &apos;NOW&apos;,&apos;localtime&apos;)</DefaultExpression>
+    </column>
+    <column id="48" parent="11" name="ITINERARY_CLIENT">
+      <Position>3</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="49" parent="11" name="ITINERARY_FLIGHT">
+      <Position>4</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="50" parent="11" name="TRAVELLER">
+      <Position>5</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <key id="51" parent="11">
+      <ColNames>_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="52" parent="11">
+      <ColNames>ITINERARY_CLIENT</ColNames>
+      <RefTableName>CLIENT</RefTableName>
+      <RefColNames>_id</RefColNames>
+    </foreign-key>
+    <foreign-key id="53" parent="11">
+      <ColNames>ITINERARY_FLIGHT</ColNames>
+      <RefTableName>FLIGHT</RefTableName>
+      <RefColNames>_id</RefColNames>
+    </foreign-key>
+    <column id="54" parent="12" name="_id">
+      <Position>1</Position>
+      <DataType>INTEGER|0s</DataType>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="55" parent="12" name="SEATNUMBER">
+      <Position>2</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="56" parent="12" name="SEAT_FLIGHT">
+      <Position>3</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="57" parent="12" name="STATUS">
+      <Position>4</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="58" parent="12" name="SEAT_FLIGHTCLASS">
+      <Position>5</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <key id="59" parent="12">
+      <ColNames>_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="60" parent="12">
+      <ColNames>SEAT_FLIGHT</ColNames>
+      <RefTableName>FLIGHT</RefTableName>
+      <RefColNames>_id</RefColNames>
+    </foreign-key>
+    <foreign-key id="61" parent="12">
+      <ColNames>SEAT_FLIGHTCLASS</ColNames>
+      <RefTableName>FLIGHTCLASS</RefTableName>
+      <RefColNames>_id</RefColNames>
+    </foreign-key>
+    <column id="62" parent="13" name="type">
+      <Position>1</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="63" parent="13" name="name">
+      <Position>2</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="64" parent="13" name="tbl_name">
+      <Position>3</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="65" parent="13" name="rootpage">
+      <Position>4</Position>
+      <DataType>int|0s</DataType>
+    </column>
+    <column id="66" parent="13" name="sql">
+      <Position>5</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="67" parent="14" name="name">
+      <Position>1</Position>
+    </column>
+    <column id="68" parent="14" name="seq">
+      <Position>2</Position>
+    </column>
+  </database-model>
+</dataSource>
